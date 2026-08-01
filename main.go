@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/boymeetsblockchain/go-jwt/controllers"
 	"github.com/boymeetsblockchain/go-jwt/initializers"
+	"github.com/boymeetsblockchain/go-jwt/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
@@ -22,6 +23,6 @@ func main() {
 
 	r.POST("/sign-up", controllers.Signup)
 	r.POST("/login", controllers.Login)
-	r.GET("/validate-token", controllers.ValidateToken)
+	r.GET("/validate-token", middlewares.RequireAuth, controllers.ValidateToken)
 	r.Run() // listen and serve on
 }
