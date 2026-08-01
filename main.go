@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/boymeetsblockchain/go-jwt/controllers"
 	"github.com/boymeetsblockchain/go-jwt/initializers"
 	"github.com/gin-gonic/gin"
 )
@@ -18,5 +19,7 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	r.POST("/sign-up", controllers.Signup)
 	r.Run() // listen and serve on
 }
