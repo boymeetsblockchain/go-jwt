@@ -91,4 +91,11 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"token": tokenString,
 	})
+
+}
+
+func ValidateToken(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Token is valid",
+	})
 }

@@ -22,5 +22,6 @@ func main() {
 
 	r.POST("/sign-up", controllers.Signup)
 	r.POST("/login", controllers.Login)
+	r.GET("/validate-token", controllers.ValidateToken)
 	r.Run() // listen and serve on
 }
